@@ -1,0 +1,118 @@
+<!-- templates/funzone.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CR7 FunZone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .quiz, .vote {
+            background-color: #1f2833;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 700px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background-color: #45a29e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: #66fcf1;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CR7LegacyRoom 🐐</h1>
+    <p>"Your love makes me strong, your hate makes me unstoppable." – Cristiano Ronaldo</p>
+    <img src="{{ url_for('static', filename='ronaldo.jpg') }}" alt="Cristiano Ronaldo" class="main-image">
+
+    <h2>🔥 FunZone – Prove You’re a Real CR7 Fan</h2>
+
+    <!-- Quiz Section -->
+    <div class="quiz">
+        <h3>💡 CR7 Quiz</h3>
+        <form method="POST">
+            <p>1. Where did Ronaldo start his senior career?</p>
+            <input type="text" name="q1">
+
+            <p>2. How many Ballon d'Or has he won?</p>
+            <input type="text" name="q2">
+
+            <p>3. In what year did he win his first Ballon d'Or?</p>
+            <input type="text" name="q3">
+
+            <p>4. Who is often compared with Ronaldo?</p>
+            <input type="text" name="q4">
+
+            <p>5. Which national team does Ronaldo play for?</p>
+            <input type="text" name="q5">
+
+            <br>
+            <button type="submit">Submit Answers</button>
+        </form>
+
+        {% if score is not none %}
+            <h4>Your Score: {{ score }}/5</h4>
+        {% endif %}
+    </div>
+
+    <!-- Vote Section -->
+    <div class="vote">
+        <h3>🗳️ Who’s the Real GOAT?</h3>
+        <form action="/vote" method="POST">
+            <button name="vote" value="ronaldo">Cristiano Ronaldo</button>
+            <button name="vote" value="messi">Lionel Messi</button>
+        </form>
+
+        {% if vote_stats %}
+            <p>🧮 Ronaldo: {{ vote_stats.ronaldo }}% | Messi: {{ vote_stats.messi }}%</p>
+        {% endif %}
+    </div>
+
+    <!-- Back Button -->
+    <a class="back-home" href="/">← Back to Home</a>
+
+</body>
+</html>

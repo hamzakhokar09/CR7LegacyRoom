@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CR7 Legacy Room</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      border-radius: 15px;
+      border: 1px solid #00ffcc20;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .btn-success {
+      background-color: #00ffc3;
+      color: black;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-success:hover {
+      background-color: #00cc99;
+    }
+    .main-image {
+      max-height: 300px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1>CR7LegacyRoom 🐐</h1>
+      <p>"Your love makes me strong, your hate makes me unstoppable." – Cristiano Ronaldo</p>
+      <img src="{{ url_for('static', filename='ronaldo.jpg') }}" alt="Cristiano Ronaldo" class="img-fluid my-3 main-image">
+      <h2 class="mt-4">🏆 Real Madrid – Greatest Club Ever</h2>
+      <p>35 La Liga titles. 15 Champions Leagues. 100+ trophies. No comparison.</p>
+      <img src="{{ url_for('static', filename='realmadrid.jpg') }}" alt="Real Madrid" class="img-fluid main-image">
+    </div>
+
+    <!-- Cards Row 1 -->
+    <div class="row text-center mb-4">
+
+      <!-- Records & Moments -->
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100 shadow">
+          <div class="card-body">
+            <h4 class="card-title">🥇 Records & Moments</h4>
+            <p class="card-text">Unmatched legacy, records, and legendary achievements that shook the football world.</p>
+            <a href="/records" class="btn btn-success mt-3">View Records →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CR7 FunZone -->
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100 shadow">
+          <div class="card-body">
+            <h4 class="card-title">🎮 CR7 FunZone</h4>
+            <p class="card-text">Test your knowledge, vote in polls, and climb the fan leaderboard!</p>
+            <a href="/funzone" class="btn btn-success mt-3">Enter FunZone →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wallpapers -->
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100 shadow">
+          <div class="card-body">
+            <h4 class="card-title">🖼️ CR7 Wallpapers</h4>
+            <p class="card-text">Download stunning Ronaldo wallpapers & see global fan love.</p>
+            <a href="/gallery" class="btn btn-success mt-3">Wallpapers →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Cards Row 2 -->
+    <div class="row text-center">
+
+      <!-- CR7 vs Messi -->
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100 shadow">
+          <div class="card-body">
+            <h4 class="card-title">🆚 CR7 vs Messi</h4>
+            <p class="card-text">The ultimate rivalry. Stats, trophies, records, and more.</p>
+            <a href="/goat" class="btn btn-success mt-3">Compare Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trophy Cabinet -->
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100 shadow">
+          <div class="card-body">
+            <h4 class="card-title">🏆 Trophy Cabinet</h4>
+            <p class="card-text">A visual showcase of Cristiano Ronaldo’s unparalleled trophy collection.</p>
+            <a href="/trophies" class="btn btn-success mt-3">View Trophies →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Timeline -->
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100 shadow">
+          <div class="card-body">
+            <h4 class="card-title">📈 Career Timeline</h4>
+            <p class="card-text">From Sporting CP to Al-Nassr — witness every key chapter of CR7's legendary journey.</p>
+            <a href="/career" class="btn btn-success mt-3">Explore Career →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

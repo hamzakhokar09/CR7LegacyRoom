@@ -1,0 +1,58 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+
+    <meta charset="UTF-8">
+    <title>CR7 Wallpapers & Fan Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .gallery-img {
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">📸 CR7 Wallpapers & Fan Gallery</h1>
+        <div class="row">
+
+            <!-- Image 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark border-secondary">
+                    <img src="{{ url_for('static', filename='images/wallpaper1.jpg') }}" class="card-img-top gallery-img" alt="Wallpaper 1">
+                    <div class="card-body text-center">
+                        <a href="{{ url_for('static', filename='images/wallpaper1.jpg') }}" download class="btn btn-outline-light btn-sm">Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark border-secondary">
+                    <img src="{{ url_for('static', filename='images/wallpaper2.jpg') }}" class="card-img-top gallery-img" alt="Wallpaper 2">
+                    <div class="card-body text-center">
+                        <a href="{{ url_for('static', filename='images/wallpaper2.jpg') }}" download class="btn btn-outline-light btn-sm">Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more images the same way -->
+
+        </div>
+    </div>
+    
+<!-- Fixed Bottom Back to Home Button -->
+<div class="text-center mt-5">
+    <a href="/" class="btn btn-outline-light btn-sm">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>
